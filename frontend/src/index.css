@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #0f172a;
+  background: #f8fafc;
+  --gs-green-50: #ecfdf5;
+  --gs-green-100: #d1fae5;
+  --gs-green-600: #16a34a;
+  --gs-green-700: #15803d;
+  --gs-slate-50: #f8fafc;
+  --gs-slate-200: #e2e8f0;
+  --gs-slate-600: #475569;
+  --gs-slate-900: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f8fafc;
+  color: var(--gs-slate-900);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.page-shell {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.primary-btn,
+.secondary-btn,
+.language-card,
+.chip,
+.voice-mic {
+  transition: all 0.2s ease;
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 0.9rem;
+  background: var(--gs-green-600);
+  color: white;
+  padding: 0.9rem 1.2rem;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(22, 163, 74, 0.18);
+}
+
+.primary-btn:hover {
+  background: var(--gs-green-700);
+}
+
+.secondary-btn {
+  border: 1px solid var(--gs-slate-200);
+  background: white;
+  color: var(--gs-slate-900);
+  border-radius: 0.9rem;
+  padding: 0.8rem 1rem;
+  font-weight: 600;
+}
+
+.language-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid var(--gs-slate-200);
+  background: white;
+  padding: 1rem 1rem;
+  border-radius: 1rem;
+  text-align: left;
+  color: var(--gs-slate-900);
+}
+
+.language-card.selected,
+.chip.selected {
+  border-color: var(--gs-green-600);
+  background: var(--gs-green-50);
+  color: var(--gs-green-700);
+}
+
+.chip {
+  border: 1px solid var(--gs-slate-200);
+  background: white;
+  color: var(--gs-slate-700);
+  border-radius: 999px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.input-field {
+  width: 100%;
+  border: 1px solid var(--gs-slate-200);
+  border-radius: 0.9rem;
+  background: white;
+  padding: 0.8rem 0.9rem;
+  color: var(--gs-slate-900);
+}
+
+.input-field:focus {
+  outline: 2px solid rgba(22, 163, 74, 0.2);
+  border-color: var(--gs-green-600);
+}
+
+.voice-mic {
+  display: grid;
+  place-items: center;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: var(--gs-green-600);
+  color: white;
+  font-size: 2.5rem;
+  border: none;
+  box-shadow: 0 14px 28px rgba(22, 163, 74, 0.2);
+}
+
+.voice-mic.listening {
+  background: #dc2626;
+  transform: scale(1.03);
+}
+
+.custom-map-marker {
+  background: #16a34a;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.18);
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 420px;
+  background: #f1f5f9;
+}
+
+@media (max-width: 640px) {
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  .voice-mic {
+    width: 90px;
+    height: 90px;
+    font-size: 2rem;
+  }
+}
